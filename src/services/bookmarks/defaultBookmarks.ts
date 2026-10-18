@@ -1,0 +1,60 @@
+import { BookmarkItem } from '../storage/types';
+
+export const DEFAULT_BOOKMARKS: BookmarkItem[] = [
+  {
+    id: 'chatter1',
+    title: 'Chatter1 (AI Character & Story Chat)',
+    url: 'https://perchance.org/chatter1',
+    description: 'Mobile-optimized character chat and gallery generator with IndexedDB character storage and heavy media caching.',
+    category: 'roleplay',
+    icon: 'message-square',
+  },
+  {
+    id: 'local-test',
+    title: 'Phone Storage Tester & Playground',
+    url: 'local://playground',
+    description: 'Built-in interactive runner to test reading/writing phone storage and cache quota in real-time.',
+    category: 'tools',
+    icon: 'wrench',
+  },
+  {
+    id: 'ai-char-chat',
+    title: 'AI Character Chat',
+    url: 'https://perchance.org/ai-character-chat',
+    description: 'Chat with custom characters. Store character cards, lore, and chat logs in phone storage.',
+    category: 'roleplay',
+    icon: 'message-square',
+  },
+  {
+    id: 'ai-story-gen',
+    title: 'AI Story Generator',
+    url: 'https://perchance.org/ai-story-generator',
+    description: 'Procedural and AI-assisted story generation with persistent phone chapters.',
+    category: 'story',
+    icon: 'book-open',
+  },
+  {
+    id: 'ai-text-rpg',
+    title: 'AI Text RPG',
+    url: 'https://perchance.org/ai-text-rpg',
+    description: 'Adventure RPG engine. Save your inventory, character stats, and quest states.',
+    category: 'rpg',
+    icon: 'shield',
+  },
+  {
+    id: 'fantasy-names',
+    title: 'Fantasy Name Generator',
+    url: 'https://perchance.org/fantasy-name-generator',
+    description: 'Generate millions of character, faction, and city names from custom lists.',
+    category: 'utility',
+    icon: 'sparkles',
+  },
+  {
+    id: 'perchance-tutorial',
+    title: 'Perchance Code Tutorial',
+    url: 'https://perchance.org/tutorial',
+    description: 'Official Perchance syntax guide and documentation for creating custom generators.',
+    category: 'tools',
+    icon: 'code',
+  },
+];

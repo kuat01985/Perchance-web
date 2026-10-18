@@ -1,0 +1,6 @@
+{
+  "name": "Perchance Vault Browser",
+  "description": "Mobile web browser and storage bridge allowing Perchance.org generators to read, write, and persist files on your phone's storage.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
