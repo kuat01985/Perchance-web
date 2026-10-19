@@ -7,6 +7,7 @@ interface MobileTopBarProps {
   onOpenUrlInput: () => void;
   onRefresh: () => void;
   onOpenCache: () => void;
+  onOpenSwapLab: () => void;
   isLoading?: boolean;
 }
 
@@ -15,6 +16,7 @@ export const MobileTopBar: React.FC<MobileTopBarProps> = ({
   onOpenUrlInput,
   onRefresh,
   onOpenCache,
+  onOpenSwapLab,
   isLoading = false,
 }) => {
   const [cacheQuotaMB, setCacheQuotaMB] = useState(phoneStorage.getStorageStatus().cacheQuotaMB);
@@ -71,6 +73,18 @@ export const MobileTopBar: React.FC<MobileTopBarProps> = ({
         <Sliders className="w-3.5 h-3.5 text-indigo-400" />
         <span className="font-mono text-[11px] font-bold text-indigo-200">
           {cacheQuotaMB}M
+        </span>
+      </button>
+
+      {/* SwapLab APK Builder Quick Button */}
+      <button
+        onClick={onOpenSwapLab}
+        className="flex items-center gap-1 px-2.5 py-2 rounded-2xl bg-emerald-950/60 hover:bg-emerald-900/60 border border-emerald-700/60 active:scale-95 transition shrink-0"
+        title="SwapLab Android APK Builder (public.swaplab.net)"
+      >
+        <Smartphone className="w-3.5 h-3.5 text-emerald-400" />
+        <span className="font-mono text-[11px] font-bold text-emerald-300">
+          APK
         </span>
       </button>
 

@@ -7,6 +7,7 @@ import { MobileMenuSheet } from './components/mobile/MobileMenuSheet';
 import { PerchanceFrame } from './components/browser/PerchanceFrame';
 import { StorageDrawer } from './components/storage/StorageDrawer';
 import { BookmarksModal } from './components/bookmarks/BookmarksModal';
+import { SwapLabBuildModal } from './components/swaplab/SwapLabBuildModal';
 import { BrowserTab, VaultFile } from './services/storage/types';
 
 export default function App() {
@@ -48,6 +49,7 @@ export default function App() {
   const [isStorageOpen, setIsStorageOpen] = useState(false);
   const [storageInitialTab, setStorageInitialTab] = useState<'files' | 'cache' | 'code' | 'logs'>('files');
   const [isBookmarksOpen, setIsBookmarksOpen] = useState(false);
+  const [isSwapLabOpen, setIsSwapLabOpen] = useState(false);
   const [insertNotice, setInsertNotice] = useState<string | null>(null);
 
   // Sync tabs to localStorage
@@ -156,6 +158,7 @@ export default function App() {
         onOpenUrlInput={() => setIsUrlModalOpen(true)}
         onRefresh={handleRefresh}
         onOpenCache={() => handleOpenStorage('cache')}
+        onOpenSwapLab={() => setIsSwapLabOpen(true)}
         isLoading={activeTab.isLoading}
       />
 
@@ -214,6 +217,7 @@ export default function App() {
         onOpenBookmarks={() => setIsBookmarksOpen(true)}
         onOpenCache={() => handleOpenStorage('cache')}
         onOpenFiles={() => handleOpenStorage('files')}
+        onOpenSwapLab={() => setIsSwapLabOpen(true)}
         onRefresh={handleRefresh}
       />
 
@@ -230,6 +234,12 @@ export default function App() {
         isOpen={isBookmarksOpen}
         onClose={() => setIsBookmarksOpen(false)}
         onSelectUrl={(selectedUrl) => navigateTo(selectedUrl)}
+      />
+
+      {/* SwapLab Android APK Builder Modal */}
+      <SwapLabBuildModal
+        isOpen={isSwapLabOpen}
+        onClose={() => setIsSwapLabOpen(false)}
       />
     </div>
   );

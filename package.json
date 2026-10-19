@@ -8,7 +8,10 @@
     "build": "vite build",
     "preview": "vite preview",
     "clean": "rm -rf dist server.js",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit",
+    "cap:sync": "npx cap sync android",
+    "swaplab:package": "npm run build && npm run cap:sync && node scripts/package-for-swaplab.mjs",
+    "swaplab:build": "npm run swaplab:package"
   },
   "dependencies": {
     "@capacitor/android": "^8.5.3",

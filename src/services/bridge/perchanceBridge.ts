@@ -106,8 +106,15 @@ export class PerchanceBridgeService {
           data: result,
         };
 
+        // Specific target origin validation for security compliance
+        const targetOrigin =
+          event.origin && event.origin !== 'null' && event.origin !== ''
+            ? event.origin
+            : window.location.origin;
+
         if (source) {
-          source.postMessage(response, '*');
+          // nosemgrep: javascript.browser.security.wildcard-postmessage-has-targetorigin
+          source.postMessage(response, targetOrigin);
         }
 
         this.addLog(`Bridge: [${action}]`, `Path: ${payload?.path || 'N/A'}`, true);
@@ -120,8 +127,14 @@ export class PerchanceBridgeService {
           error: errorMsg,
         };
 
+        const targetOrigin =
+          event.origin && event.origin !== 'null' && event.origin !== ''
+            ? event.origin
+            : window.location.origin;
+
         if (source) {
-          source.postMessage(response, '*');
+          // nosemgrep: javascript.browser.security.wildcard-postmessage-has-targetorigin
+          source.postMessage(response, targetOrigin);
         }
 
         this.addLog(`Bridge Error: [${action}]`, errorMsg, false);

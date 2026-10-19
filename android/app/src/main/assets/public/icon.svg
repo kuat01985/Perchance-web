@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4f46e5" />
+      <stop offset="50%" stop-color="#7c3aed" />
+      <stop offset="100%" stop-color="#9333ea" />
+    </linearGradient>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <!-- Storage Vault & Perchance Die / Node Graphic -->
+  <g transform="translate(64, 64) scale(0.75)">
+    <!-- Device Frame / Vault -->
+    <rect x="60" y="40" width="392" height="432" rx="36" fill="#1e1b4b" stroke="#818cf8" stroke-width="12" />
+    <!-- Screen Header -->
+    <rect x="80" y="64" width="352" height="48" rx="14" fill="#312e81" />
+    <circle cx="112" cy="88" r="8" fill="#f43f5e" />
+    <circle cx="136" cy="88" r="8" fill="#fbbf24" />
+    <circle cx="160" cy="88" r="8" fill="#10b981" />
+    <rect x="190" y="78" width="220" height="20" rx="8" fill="#4338ca" />
+
+    <!-- Storage Vault Safe Door / Perchance Dice Shape -->
+    <circle cx="256" cy="280" r="110" fill="url(#shieldGrad)" />
+    <circle cx="256" cy="280" r="80" fill="#0f172a" />
+
+    <!-- File tree / Perchance Dice Dots & Connection Lines -->
+    <path d="M 220 250 L 292 250 L 256 312 Z" stroke="#38bdf8" stroke-width="8" stroke-linejoin="round" fill="none" />
+    <circle cx="220" cy="250" r="14" fill="#a855f7" />
+    <circle cx="292" cy="250" r="14" fill="#ec4899" />
+    <circle cx="256" cy="312" r="14" fill="#06b6d4" />
+    
+    <!-- Phone Storage Microchip Indicator -->
+    <path d="M 120 400 L 392 400" stroke="#6366f1" stroke-width="6" stroke-linecap="round" stroke-dasharray="12 12" />
+    <rect x="216" y="380" width="80" height="40" rx="10" fill="#4f46e5" stroke="#a5b4fc" stroke-width="4" />
+    <path d="M 246 392 L 266 392 M 246 400 L 266 400 M 246 408 L 266 408" stroke="#ffffff" stroke-width="3" stroke-linecap="round" />
+  </g>
+</svg>

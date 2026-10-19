@@ -560,7 +560,8 @@ class PhoneStorageManager {
           }
         }
       } catch (err) {
-        console.warn(`Could not add ${f.path} to zip`, err);
+        // Use constant string literal format
+        console.warn('Could not add file to zip:', f.path, err);
       }
     }
 

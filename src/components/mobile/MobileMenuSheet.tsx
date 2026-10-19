@@ -21,6 +21,7 @@ interface MobileMenuSheetProps {
   onOpenBookmarks: () => void;
   onOpenCache: () => void;
   onOpenFiles: () => void;
+  onOpenSwapLab: () => void;
   onRefresh: () => void;
 }
 
@@ -31,6 +32,7 @@ export const MobileMenuSheet: React.FC<MobileMenuSheetProps> = ({
   onOpenBookmarks,
   onOpenCache,
   onOpenFiles,
+  onOpenSwapLab,
   onRefresh,
 }) => {
   if (!isOpen) return null;
@@ -99,6 +101,33 @@ export const MobileMenuSheet: React.FC<MobileMenuSheetProps> = ({
 
         {/* Action Grid */}
         <div className="grid grid-cols-2 gap-2 text-xs">
+          {/* SwapLab Android APK Builder */}
+          <button
+            onClick={() => {
+              onClose();
+              onOpenSwapLab();
+            }}
+            className="col-span-2 flex items-center justify-between p-3 rounded-2xl bg-gradient-to-r from-indigo-950/80 via-slate-900 to-emerald-950/70 border border-emerald-500/40 hover:border-emerald-400 active:scale-98 transition text-left group shadow-sm"
+          >
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center shrink-0">
+                <Smartphone className="w-4 h-4 text-emerald-400" />
+              </div>
+              <div>
+                <div className="font-semibold text-white flex items-center gap-1.5">
+                  <span>SwapLab Android Builder</span>
+                  <span className="text-[9px] px-1.5 py-0.5 bg-emerald-500/20 text-emerald-300 rounded border border-emerald-500/30 font-mono">
+                    public.swaplab.net
+                  </span>
+                </div>
+                <div className="text-[10px] text-slate-400">
+                  Ready-to-upload ZIP & APK cloud build
+                </div>
+              </div>
+            </div>
+            <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-emerald-300 transition shrink-0 mr-1" />
+          </button>
+
           {/* Generator Hub */}
           <button
             onClick={() => {
