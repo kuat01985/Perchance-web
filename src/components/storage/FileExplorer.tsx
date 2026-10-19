@@ -214,7 +214,12 @@ export const FileExplorer: React.FC<FileExplorerProps> = ({ onInsertToGenerator,
       {/* Storage Mode Banner */}
       <div className="px-3 py-2.5 bg-slate-950 border-b border-slate-800 flex flex-wrap items-center justify-between gap-2 text-xs">
         <div className="flex items-center gap-2">
-          {status.mode === 'native_directory' ? (
+          {status.mode === 'capacitor_native_storage' ? (
+            <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-950/80 border border-emerald-700/80 text-emerald-300 font-medium">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span>Android Native Storage (Documents)</span>
+            </div>
+          ) : status.mode === 'native_directory' ? (
             <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-950/80 border border-emerald-700/80 text-emerald-300 font-medium">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
               <span>Phone Folder: {status.folderName}</span>
@@ -231,7 +236,7 @@ export const FileExplorer: React.FC<FileExplorerProps> = ({ onInsertToGenerator,
         </div>
 
         <div className="flex items-center gap-1.5 ml-auto">
-          {phoneStorage.isFileSystemAccessSupported() && status.mode !== 'native_directory' && (
+          {phoneStorage.isFileSystemAccessSupported() && status.mode !== 'native_directory' && status.mode !== 'capacitor_native_storage' && (
             <button
               onClick={handleMountPhoneFolder}
               className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-medium shadow-sm transition active:scale-95 text-xs"

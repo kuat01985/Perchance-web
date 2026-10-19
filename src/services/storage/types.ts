@@ -14,7 +14,7 @@ export interface StorageDirectory {
   name: string;
 }
 
-export type StorageMode = 'native_directory' | 'internal_virtual';
+export type StorageMode = 'native_directory' | 'internal_virtual' | 'capacitor_native_storage';
 
 export interface CacheConfig {
   maxQuotaMB: number; // e.g. 500 MB, 1000 MB, 2000 MB

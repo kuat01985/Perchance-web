@@ -1,4 +1,6 @@
 import JSZip from 'jszip';
+import { Filesystem, Directory, Encoding } from '@capacitor/filesystem';
+import { Capacitor } from '@capacitor/core';
 import { VaultFile, StorageStatus, StorageMode, CacheConfig } from './types';
 
 const DB_NAME = 'PerchanceVaultDB';
@@ -32,6 +34,10 @@ class PhoneStorageManager {
   private isPersistentGranted: boolean = false;
 
   constructor() {
+    if (Capacitor.isNativePlatform()) {
+      this.mode = 'capacitor_native_storage';
+      this.folderName = 'Phone Documents';
+    }
     this.loadCacheConfig();
     this.checkPersistence();
     this.initDefaultFiles();
